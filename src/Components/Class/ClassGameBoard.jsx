@@ -2,7 +2,7 @@ import { Component } from "react";
 import "./styles/game-board.css";
 import { Images } from "../../assets/Images";
 
-const initialFishes = [
+const initialFishInfo = [
   {
     name: "trout",
     url: Images.trout,
@@ -23,7 +23,7 @@ const initialFishes = [
 
 export class ClassGameBoard extends Component {
   render() {
-    const nextFishToName = initialFishes[0];
+    const nextFishToName = initialFishInfo[0];
     return (
       <div id="game-board">
         <div id="fish-container">
@@ -38,3 +38,5 @@ export class ClassGameBoard extends Component {
     );
   }
 }
+
+export default ClassGameBoard;

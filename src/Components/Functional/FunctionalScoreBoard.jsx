@@ -1,11 +1,9 @@
+import React from "react";
 import "./styles/score-board.css";
-//  Where the score is presented
 
-const incorrectCount = 0;
-const correctCount = 0;
-const answersLeft = ["trout", "salmon", "tuna", "shark"];
+export function FunctionalScoreBoard({ incorrectCount, correctCount, answersLeft = [],
+}) {
 
-export function FunctionalScoreBoard() {
   return (
     <div id="score-board">
       <div>Incorrect 🔻: {incorrectCount}</div>
@@ -20,3 +18,5 @@ export function FunctionalScoreBoard() {
     </div>
   );
 }
+
+export default FunctionalScoreBoard;

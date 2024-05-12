@@ -1,19 +1,10 @@
 import React, { Component } from "react";
 import "./styles/score-board.css";
 
-const initialIncorrectCount = 0;
-const initialCorrectCount = 0;
-const initialAnswersLeft = ["trout", "salmon", "tuna", "shark"];
-
 export class ClassScoreBoard extends Component {
-  state = {
-    incorrectCount: initialIncorrectCount,
-    correctCount: initialCorrectCount,
-    answersLeft: [...initialAnswersLeft],
-  };
-
   render() {
-    const { incorrectCount, correctCount, answersLeft } = this.state;
+    const { incorrectCount, correctCount, answersLeft = [] } = this.props;
+
     return (
       <div id="score-board">
         <div>Incorrect 🔻: {incorrectCount}</div>
@@ -29,5 +20,4 @@ export class ClassScoreBoard extends Component {
     );
   }
 }
-
 export default ClassScoreBoard;

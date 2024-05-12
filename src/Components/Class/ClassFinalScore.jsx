@@ -1,21 +1,28 @@
 import React, { Component } from "react";
-
 import "./styles/final-score.css";
-
-const initialTotalCount = 0;
-const initialCorrectCount = 0;
+import "../../App.css";
 
 export class ClassFinalScore extends Component {
   state = {
-    totalCount: initialTotalCount,
-    correctCount: initialCorrectCount,
+    totalCount: 4,
+    correctCount: this.props.correctCount,
   };
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.isVisible !== this.props.isVisible && this.props.isVisible) {
+      this.setState({
+        totalCount: this.props.totalCount,
+        correctCount: this.props.correctCount,
+      });
+    }
+  }
+
   render() {
-    const { totalCount, correctCount } = this.state;
     const { isVisible } = this.props;
+    const { totalCount, correctCount } = this.state;
+
     return (
-      <div id="final-score" style={{ display: isVisible ? "block" : "none" }}>
+      <div id="final-score" style={{ display: isVisible ? "block" : "" }}>
         <h1>Your Final Score Was</h1>
         <div id="score">
           <p>{correctCount}</p>

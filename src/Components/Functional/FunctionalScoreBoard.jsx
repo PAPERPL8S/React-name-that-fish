@@ -1,9 +1,11 @@
 import React from "react";
 import "./styles/score-board.css";
 
-export function FunctionalScoreBoard({ incorrectCount, correctCount, answersLeft = [],
+export function FunctionalScoreBoard({
+  incorrectCount,
+  correctCount,
+  answersLeft = [],
 }) {
-
   return (
     <div id="score-board">
       <div>Incorrect 🔻: {incorrectCount}</div>

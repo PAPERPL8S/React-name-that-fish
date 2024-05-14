@@ -7,3 +7,5 @@ export const fishInfo = [
   { name: "tuna", url: Images.tuna },
   { name: "shark", url: Images.shark },
 ];
+
+export default fishInfo;

@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./styles/game-board.css";
 
-export function FunctionalGameBoard({ fishData, onAnswerSubmitted }) {
+export function FunctionalGameBoard({ fishInfo, onAnswerSubmitted }) {
   const [userGuess, setUserGuess] = useState("");
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    const submittedAnswer = userGuess.value.trim().toLowerCase();
+    const submittedAnswer = userGuess.trim().toLowerCase();
     onAnswerSubmitted(submittedAnswer);
     setUserGuess("");
   };
 
-  const { name, url } = fishData;
+  const { name, url } = fishInfo;
 
   return (
     <div id="game-board">

@@ -5,7 +5,7 @@ import { ClassFinalScore } from "./ClassFinalScore";
 import "./styles/score-board.css";
 import "./styles/game-board.css";
 import "./styles/final-score.css";
-import { fishInfo } from "../../constants/fishData"; // Import fishInfo
+import { fishInfo } from "../../constants/fishData";
 
 class ClassApp extends Component {
   constructor(props) {

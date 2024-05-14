@@ -4,7 +4,7 @@ import "./styles/score-board.css";
 export function FunctionalScoreBoard({
   incorrectCount,
   correctCount,
-  answersLeft = [],
+  answersLeft,
 }) {
   return (
     <div id="score-board">

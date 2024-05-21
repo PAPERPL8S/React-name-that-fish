@@ -12,7 +12,7 @@ export function FunctionalApp() {
   const [correctCount, setCorrectCount] = useState(0);
 
   const guessesSum = incorrectCount + correctCount;
-  const showFinalScore = guessesSum === fishInfo.length;
+  const isGameOver = guessesSum === fishInfo.length;
   const answersLeft = fishInfo.map((fish) => fish.name).slice(guessesSum);
 
   const handleAnswersSubmitted = (answer) => {
@@ -25,7 +25,7 @@ export function FunctionalApp() {
 
   return (
     <>
-      {!showFinalScore && (
+      {!isGameOver && (
         <>
           <FunctionalScoreBoard
             incorrectCount={incorrectCount}

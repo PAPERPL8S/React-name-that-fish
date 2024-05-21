@@ -20,26 +20,22 @@ class ClassApp extends Component {
     const { incorrectCount, correctCount } = this.state;
     const guessesSum = incorrectCount + correctCount;
 
-    if (answer === fishInfo[guessesSum].name) {
-      this.setState((prevState) => ({
-        correctCount: prevState.correctCount + 1,
-      }));
-    } else {
-      this.setState((prevState) => ({
-        incorrectCount: prevState.incorrectCount + 1,
-      }));
-    }
+    const statePropertyToUpdate = answer === fishInfo[guessesSum].name ? 'correctCount' : 'incorrectCount'
+    
+    this.setState((prevState) => ({
+      [statePropertyToUpdate]: prevState[statePropertyToUpdate] + 1,
+    }));
   };
 
   render() {
     const { incorrectCount, correctCount } = this.state;
     const guessesSum = incorrectCount + correctCount;
-    const showFinalScore = guessesSum === fishInfo.length;
+    const isGameOver = guessesSum === fishInfo.length;
     const answersLeft = fishInfo.map((fish) => fish.name).slice(guessesSum);
 
     return (
       <>
-        {!showFinalScore && (
+        {!isGameOver && (
           <>
             <ClassScoreBoard
               incorrectCount={incorrectCount}
@@ -52,7 +48,7 @@ class ClassApp extends Component {
             />
           </>
         )}
-        {showFinalScore && (
+        {isGameOver && (
           <ClassFinalScore
             totalCount={fishInfo.length}
             correctCount={correctCount}
